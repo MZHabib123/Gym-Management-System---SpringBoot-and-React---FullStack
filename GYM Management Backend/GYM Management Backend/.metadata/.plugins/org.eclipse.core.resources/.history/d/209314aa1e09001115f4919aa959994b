@@ -1,0 +1,21 @@
+package com.incedo;
+
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ApiGatewayGymApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ApiGatewayGymApplication.class, args);
+		System.out.println("APIGateway is running------------->>>>>>>>>>>>");
+	}
+	// Source - https://stackoverflow.com/a/71754811
+	// Posted by Abdelrahman Elayashy, modified by community. See post 'Timeline' for change history
+	// Retrieved 2026-02-14, License - CC BY-SA 4.0
+
+	
+
+}

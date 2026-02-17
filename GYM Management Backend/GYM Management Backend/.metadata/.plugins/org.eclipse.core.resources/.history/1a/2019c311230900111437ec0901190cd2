@@ -1,0 +1,5 @@
+package com.gym.client;
+
+public class MemberClient {
+
+}

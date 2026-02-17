@@ -1,0 +1,65 @@
+package com.incedo.dto;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+
+public class TrainerRequestDTO {
+
+    public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getSpecialization() {
+		return specialization;
+	}
+
+	public void setSpecialization(String specialization) {
+		this.specialization = specialization;
+	}
+
+	public int getExperienceYears() {
+		return experienceYears;
+	}
+
+	public void setExperienceYears(int experienceYears) {
+		this.experienceYears = experienceYears;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	@NotBlank
+    private String name;
+
+    @NotBlank
+    private String specialization;
+
+    @Min(0)
+    private int experienceYears;
+
+    @Email
+    private String email;
+
+    @NotBlank
+    private String phone;
+
+    // Getters and Setters
+}

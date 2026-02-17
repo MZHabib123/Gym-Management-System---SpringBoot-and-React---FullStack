@@ -1,0 +1,32 @@
+package com.gym.client;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
+
+import reactor.core.publisher.Mono;
+
+@Service
+public class MemberClient {
+
+    @Autowired
+    private WebClient webClient;
+
+    @Value("${member.service.url}")
+    private String memberServiceUrl;
+
+    public boolean memberExists(Long memberId) {
+
+        return webClient.get()
+                .uri(memberServiceUrl + "/" + memberId)
+                .retrieve()
+                .onStatus(status -> status.is4xxClientError(),
+                        response -> Mono.empty())
+                .toBodilessEntity()
+                .map(response -> true)
+                .defaultIfEmpty(false)
+                .block();
+    }
+
+}

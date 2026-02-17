@@ -1,0 +1,16 @@
+/* Center entire page */
+.page-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Limit content width and center it */
+.hero,
+.cards-container,
+.footer {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}

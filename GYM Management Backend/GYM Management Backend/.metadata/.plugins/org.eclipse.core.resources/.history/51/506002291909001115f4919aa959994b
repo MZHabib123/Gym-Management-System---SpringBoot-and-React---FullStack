@@ -1,0 +1,48 @@
+spring.application.name=ApiGatewayGym
+
+# ==================================
+# SERVER CONFIG
+# ==================================
+server.port=8080
+
+# ==================================
+# MEMBER SERVICE (8081)
+# ==================================
+spring.cloud.gateway.routes[0].id=MemberService
+spring.cloud.gateway.routes[0].uri=http://localhost:8081
+spring.cloud.gateway.routes[0].predicates[0]=Path=/apiG/**
+
+# ==================================
+# AUTH SERVICE (8082)
+# ==================================
+spring.cloud.gateway.routes[1].id=auth-service
+spring.cloud.gateway.routes[1].uri=http://localhost:8082
+spring.cloud.gateway.routes[1].predicates[0]=Path=/apiG/**
+
+# ==================================
+# ATTENDANCE SERVICE (8083)
+# ==================================
+spring.cloud.gateway.routes[2].id=attendance-service
+spring.cloud.gateway.routes[2].uri=http://localhost:8083
+spring.cloud.gateway.routes[2].predicates[0]=Path=/apiG/**
+
+# ==================================
+# TRAINER SERVICE (8084)
+# ==================================
+spring.cloud.gateway.routes[3].id=TrainerServiceGym
+spring.cloud.gateway.routes[3].uri=http://localhost:8084
+spring.cloud.gateway.routes[3].predicates[0]=Path=/apiG/**
+
+# ==================================
+# CLASS & BOOKING SERVICE (8085)
+# ==================================
+spring.cloud.gateway.routes[4].id=class-booking-service
+spring.cloud.gateway.routes[4].uri=http://localhost:8085
+spring.cloud.gateway.routes[4].predicates[0]=Path=/apiG/**
+
+# ==================================
+# INVENTORY SERVICE (8086)
+# ==================================
+spring.cloud.gateway.routes[5].id=InventoryService
+spring.cloud.gateway.routes[5].uri=http://localhost:8086
+spring.cloud.gateway.routes[5].predicates[0]=Path=/apiG/**

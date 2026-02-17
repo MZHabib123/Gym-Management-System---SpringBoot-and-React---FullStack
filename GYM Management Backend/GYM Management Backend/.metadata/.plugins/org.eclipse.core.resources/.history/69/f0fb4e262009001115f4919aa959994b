@@ -1,0 +1,32 @@
+spring.application.name=ApiGatewayGym
+server.port=8080
+
+# MEMBER SERVICE
+spring.cloud.gateway.routes[0].id=member-service
+spring.cloud.gateway.routes[0].uri=http://localhost:8081
+spring.cloud.gateway.routes[0].predicates[0]=Path=/api/members/**
+
+# AUTH SERVICE
+spring.cloud.gateway.routes[1].id=auth-service
+spring.cloud.gateway.routes[1].uri=http://localhost:8082
+spring.cloud.gateway.routes[1].predicates[0]=Path=/api/au/**
+
+# ATTENDANCE SERVICE
+spring.cloud.gateway.routes[2].id=attendance-service
+spring.cloud.gateway.routes[2].uri=http://localhost:8083
+spring.cloud.gateway.routes[2].predicates[0]=Path=/api/att/**
+
+# TRAINER SERVICE
+spring.cloud.gateway.routes[3].id=trainer-service
+spring.cloud.gateway.routes[3].uri=http://localhost:8084
+spring.cloud.gateway.routes[3].predicates[0]=Path=/api/tr/**
+
+# CLASS SERVICE
+spring.cloud.gateway.routes[4].id=class-service
+spring.cloud.gateway.routes[4].uri=http://localhost:8085
+spring.cloud.gateway.routes[4].predicates[0]=Path=/api/cl/**
+
+# INVENTORY SERVICE
+spring.cloud.gateway.routes[5].id=inventory-service
+spring.cloud.gateway.routes[5].uri=http://localhost:8086
+spring.cloud.gateway.routes[5].predicates[0]=Path=/api/ass/**

@@ -1,0 +1,7 @@
+spring.application.name=ApiGatewayGym
+server.port=8080
+
+
+spring.cloud.gateway.routes[0].id=test-member
+spring.cloud.gateway.routes[0].uri=http://localhost:8081
+spring.cloud.gateway.routes[0].predicates[0]=Path=/members/**

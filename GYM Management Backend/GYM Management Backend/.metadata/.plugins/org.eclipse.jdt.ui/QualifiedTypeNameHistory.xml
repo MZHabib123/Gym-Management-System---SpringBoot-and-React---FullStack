@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.hibernate.internal.build.AllowSysOut"/>
+    <fullyQualifiedTypeName name="com.incedo.entity.Member"/>
+    <fullyQualifiedTypeName name="java.net.http.HttpClient"/>
+</qualifiedTypeNameHistroy>
