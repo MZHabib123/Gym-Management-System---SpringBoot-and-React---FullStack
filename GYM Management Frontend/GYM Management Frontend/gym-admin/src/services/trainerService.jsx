@@ -13,3 +13,9 @@ export const addTrainer = (data) => {
 export const deleteTrainerById = (id) => {
   return axios.delete(`${API_URL}/${id}`);
 };
+
+// Assign a member to a trainer (backend endpoint on a different port)
+export const assignTrainer = (trainerId, memberId) => {
+  const url = "http://localhost:8080/trainers/assign";
+  return axios.post(url, { trainerId, memberId });
+};

@@ -1,3 +1,2 @@
-2026/02/14-03:16:30.478 8148 Reusing MANIFEST C:\java_training\GYM_Phase_1\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001
-2026/02/14-03:16:30.496 8148 Recovering log #3
-2026/02/14-03:16:30.501 8148 Reusing old log C:\java_training\GYM_Phase_1\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb/000003.log 
+2026/02/18-15:09:18.222 724c Creating DB C:\Users\zaid.habib\Desktop\Mohd Zaid Habib-GYM_MANAGEMENT_SYSTEM\GYM Management Backend\GYM Management Backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb since it was missing.
+2026/02/18-15:09:18.272 724c Reusing MANIFEST C:\Users\zaid.habib\Desktop\Mohd Zaid Habib-GYM_MANAGEMENT_SYSTEM\GYM Management Backend\GYM Management Backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001

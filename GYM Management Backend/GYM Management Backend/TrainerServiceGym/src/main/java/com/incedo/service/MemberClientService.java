@@ -8,17 +8,17 @@ import com.incedo.dto.MemberDTO;
 @Service
 public class MemberClientService {
 
-    private final WebClient memberWebClient;
+    private final WebClient webClient;
 
     public MemberClientService(WebClient memberWebClient) {
-        this.memberWebClient = memberWebClient;
+        this.webClient = memberWebClient;
     }
 
-    public MemberDTO getMemberById(Long memberId) {
-        return memberWebClient.get()
-                .uri("/{id}", memberId)
+    public MemberDTO getMemberById(Long id) {
+        return webClient.get()
+                .uri("/members/{id}", id)
                 .retrieve()
                 .bodyToMono(MemberDTO.class)
-                .block(); // Blocking call for simplicity; in reactive apps, use Mono<MemberDTO>
+                .block();
     }
 }

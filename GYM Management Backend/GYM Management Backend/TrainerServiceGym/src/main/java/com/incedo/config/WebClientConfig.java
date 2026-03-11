@@ -10,7 +10,7 @@ public class WebClientConfig {
     @Bean
     public WebClient memberWebClient() {
         return WebClient.builder()
-                .baseUrl("http://localhost:8081/members/{id}") // Member Service base URL
+                .baseUrl("http://localhost:8081") // Member Service base URL
                 .build();
     }
 }

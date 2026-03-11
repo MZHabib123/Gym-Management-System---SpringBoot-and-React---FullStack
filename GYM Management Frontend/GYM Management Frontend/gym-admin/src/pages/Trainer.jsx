@@ -5,7 +5,8 @@ import "../styles/Trainer.css";
 import {
   getTrainers,
   addTrainer,
-  deleteTrainerById
+  deleteTrainerById,
+  assignTrainer
 } from "../services/trainerService";
 
 const Trainer = () => {
@@ -122,9 +123,21 @@ const Trainer = () => {
     });
   };
 
-  const assignTrainer = () => {
-    alert("Trainer Assigned Successfully! (Backend integration pending)");
-    setAssignData({ trainerId: "", memberId: "" });
+  const submitAssignTrainer = async () => {
+    try {
+      if (!assignData.trainerId || !assignData.memberId) {
+        alert("Please select both trainer and member.");
+        return;
+      }
+
+      await assignTrainer(Number(assignData.trainerId), Number(assignData.memberId));
+
+      alert("Trainer Assigned Successfully!");
+      setAssignData({ trainerId: "", memberId: "" });
+    } catch (error) {
+      console.error("Error assigning trainer:", error);
+      alert("Failed to assign trainer. Check backend.");
+    }
   };
 
   return (
@@ -237,30 +250,23 @@ const Trainer = () => {
           {/* ================= ASSIGN TRAINER ================= */}
           {activeTab === "assign" && (
             <div className="form-section">
-              <select
+              <input
+                type="number"
                 name="trainerId"
+                placeholder="Trainer ID"
                 value={assignData.trainerId}
                 onChange={handleAssignChange}
-              >
-                <option value="">Select Trainer</option>
-                {trainers.map(trainer => (
-                  <option key={trainer.id} value={trainer.id}>
-                    {trainer.name}
-                  </option>
-                ))}
-              </select>
+              />
 
-              <select
+              <input
+                type="number"
                 name="memberId"
+                placeholder="Member ID"
                 value={assignData.memberId}
                 onChange={handleAssignChange}
-              >
-                <option value="">Select Member</option>
-                <option value="1">Member 1</option>
-                <option value="2">Member 2</option>
-              </select>
+              />
 
-              <button onClick={assignTrainer}>
+              <button onClick={submitAssignTrainer}>
                 Assign
               </button>
             </div>

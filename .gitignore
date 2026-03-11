@@ -45,3 +45,9 @@ dist/
 
 *.swp
 *.swo
+
+.metadata/
+*.log
+*.class
+target/
+node_modules/
